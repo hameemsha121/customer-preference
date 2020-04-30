@@ -50,17 +50,17 @@ To run angular application run the commands in the terminal:
 2. `ng add @angular/material` - for adding angular material.
 3. `npm install bootstrap --save` - for installing bootstrap.
 4. `npm install jquery --save` -for installing jquery.
-
-Reference the path in `angular.json` file:
+5. Reference the path in `angular.json` file:
 
 ```json
-"styles": [
-    "node_modules/bootstrap/dist/css/bootstrap.min.css",
-           "src/styles.scss" 
-],
-"scripts": [
-    "node_modules/jquery/dist/jquery.min.js",    			        "node_modules/bootstrap/dist/js/bootstrap.min.js"
-]
+"styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          },
 ```
 
 
