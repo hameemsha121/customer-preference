@@ -1,0 +1,81 @@
+<div class="row " style="height: 300px;">
+
+    <form class="col-10 offset-1 bg-white p-4 border overflow-auto shadow" style="max-height:450px;">
+        <h2 class="text-center">Enter the details here</h2>
+        <div class="row">
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>customer Id</mat-label>
+                <input matInput placeholder="" disabled>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="please fill out name ">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>phone</mat-label>
+                <input type="number" matInput placeholder="123456789123">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="abc@abc.com">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>Home Address</mat-label>
+                <textarea matInput placeholder="enter your home address"></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>Work Address</mat-label>
+                <textarea matInput placeholder="enter your work address"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>phone</mat-label>
+                <input matInput placeholder="123456789123">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100 col">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="abc@abc.com">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>prefered contact: </label><br>
+                <mat-radio-group aria-label="prefered contact">&nbsp;
+                    <mat-radio-button value="1">phone</mat-radio-button>&nbsp;
+                    <mat-radio-button value="2">e-mail</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="col">
+                <label>prefered address: </label><br>
+                <mat-radio-group aria-label="prefered address">&nbsp;
+                    <mat-radio-button value="1">home</mat-radio-button>&nbsp;
+                    <mat-radio-button value="2">work</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="col">
+                <label>delivery timing : </label><br>
+                <mat-radio-group aria-label="delivery timing">&nbsp;
+                    <mat-radio-button value="1">9am - 12pm</mat-radio-button>&nbsp;
+                    <mat-radio-button value="2">1am - 6pm</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                <mat-checkbox>can deliver on sunday!</mat-checkbox>
+            </div>
+            <div class="col">
+                <mat-checkbox>send updates on new offers.</mat-checkbox>
+            </div>
+        </div>
+
+        <button mat-raised-button matSuffix color="primary" class="float-right">Submit</button>
+
+    </form>
+
+</div>
