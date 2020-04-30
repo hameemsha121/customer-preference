@@ -18,19 +18,19 @@ This project is build using Java Framework 'SpringBoot'.
 
 
 
-| Title                      | Specification                                              |
-| :------------------------- | :--------------------------------------------------------- |
-| Architecture               | Microservice  `a.user-service` `b.generate-report-service` |
-| Database                   | MySQL                                                      |
-| Database Framework         | Hibernate                                                  |
-| Front-end Framework        | Angular                                                    |
-| API                        | REST                                                       |
-| Testing Tool               | Junit                                                      |
-| Security                   | Spring Security                                            |
-| Microservice Registry      | Eureka Server                                              |
-| API Gateway                | Zuul Server                                                |
-| Load Balancer              | Ribbon                                                     |
-| MIcroservice communication | Feign                                                      |
+| Title                      | Specification                                                |
+| :------------------------- | :----------------------------------------------------------- |
+| Architecture               | Microservices  `a.get-customer-id-service` ` b.customer-preference-service` `c.generate-report-service` |
+| Database                   | MySQL                                                        |
+| Database Framework         | Hibernate                                                    |
+| Front-end Framework        | Angular                                                      |
+| API                        | REST                                                         |
+| Testing Tool               | Junit                                                        |
+| Security                   | Spring Security                                              |
+| Microservice Registry      | Eureka Server                                                |
+| API Gateway                | Zuul Server                                                  |
+| Load Balancer              | Ribbon                                                       |
+| MIcroservice communication | Feign                                                        |
 
 ```bash
 Other Dependencies are 
@@ -43,4 +43,25 @@ Other Dependencies are
 -7.Sonar
 -8.Config server 
 ```
+
+To run angular application run the commands in the terminal:
+
+1. `npm install` - for installing node modules.
+2. `ng add @angular/material` - for adding angular material.
+3. `npm install bootstrap --save` - for installing bootstrap.
+4. `npm install jquery --save` -for installing jquery.
+
+Reference the path in `angular.json` file:
+
+```json
+"styles": [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+           "src/styles.scss" 
+],
+"scripts": [
+    "node_modules/jquery/dist/jquery.min.js",    			        "node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
+```
+
+
 
