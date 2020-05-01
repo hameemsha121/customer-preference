@@ -1,9 +1,22 @@
 package com.cts.superstore.model;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
-public class GenerateReport {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Table(name="customer")
+public @Data class GenerateReport implements Serializable{
 	
+	 @Id
+	 @GeneratedValue
 	 private int id;
 	 private String name;
 	 private long phone;
@@ -15,9 +28,9 @@ public class GenerateReport {
      private String deliveryTimings;
      private boolean offerUpdates;
      private boolean availableOnSunday;
-     private Date created;
+     private LocalDate created;
      private String createdBy;
-     private Date updated;
+     private LocalDate updated;
      private String updatedBy;
      private boolean isActive;
 
