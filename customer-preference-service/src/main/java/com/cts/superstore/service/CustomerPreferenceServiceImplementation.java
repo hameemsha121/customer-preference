@@ -13,13 +13,13 @@ import com.cts.superstore.repository.CustomerPreferenceRepository;
 @Service
 public class CustomerPreferenceServiceImplementation implements CustomerPreferenceService{
 	
+	
+	
 	@Autowired
 	CustomerPreferenceRepository customerPreferenceRepo;
 
 	@Override
 	public CustomerPreferenceEntity updateCustomerPreference(CustomerPreferenceEntity customerPreferenceEntity) {
-		CustomerPreference customerPreference = new CustomerPreference();
-		BeanUtils.copyProperties(customerPreferenceEntity, customerPreference);
 		BeanUtils.copyProperties(customerPreferenceRepo.save(customerPreferenceEntity), customerPreferenceEntity);
 		  System.out.println(customerPreferenceEntity);
 			
