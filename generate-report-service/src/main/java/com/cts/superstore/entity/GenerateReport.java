@@ -1,4 +1,4 @@
-package com.cts.superstore.model;
+package com.cts.superstore.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
