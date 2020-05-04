@@ -1,6 +1,7 @@
 package com.cts.superstore.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -8,11 +9,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Table(name = "customerPreference")
+@NoArgsConstructor
+@AllArgsConstructor
 public @Data class CustomerPreferenceEntity implements Serializable{
 	
 	
@@ -32,9 +37,9 @@ public @Data class CustomerPreferenceEntity implements Serializable{
         private String deliveryTimings;
         private boolean offerUpdates;
         private boolean availableOnSunday;
-        private Date created;
+        private LocalDate created;
         private String createdBy;
-        private Date updated;
+        private LocalDate updated;
         private String updatedBy;
         private boolean isActive;
         

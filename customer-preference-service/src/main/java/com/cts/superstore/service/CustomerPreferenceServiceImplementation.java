@@ -1,7 +1,8 @@
 package com.cts.superstore.service;
 
-import java.util.List;
 
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,19 +14,16 @@ import com.cts.superstore.repository.CustomerPreferenceRepository;
 public class CustomerPreferenceServiceImplementation implements CustomerPreferenceService{
 	
 	@Autowired
-	CustomerPreferenceRepository CustomerPreferenceRepo;
+	CustomerPreferenceRepository customerPreferenceRepo;
 
 	@Override
 	public CustomerPreferenceEntity updateCustomerPreference(CustomerPreferenceEntity customerPreferenceEntity) {
 		CustomerPreference customerPreference = new CustomerPreference();
-		return null;
+		BeanUtils.copyProperties(customerPreferenceEntity, customerPreference);
+		BeanUtils.copyProperties(customerPreferenceRepo.save(customerPreferenceEntity), customerPreferenceEntity);
+		  System.out.println(customerPreferenceEntity);
+			
+		return customerPreferenceEntity;
 	}
-
-	@Override
-	public List<CustomerPreferenceEntity> getCustomerPreferenceByDate() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
+  
 }
