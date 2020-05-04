@@ -65,3 +65,33 @@ To run angular application run the commands in the terminal:
 
 
 
+For running all the microservices
+
+* open eclipse IDE
+* import the microservices as `maven` project
+
+`customer-preference-service`
+
+```java
+Right click on the project
+    -Run as spring boot app
+    -using post mapping update the values in database
+    -The port number used is 8060
+```
+
+`get-customer-id-service`
+
+```jav
+Right click on the project
+	-Run as spring boot app	
+	-the port number used is 8000
+```
+
+`generate-report-service`
+
+```java
+Right click on the project
+    -Run as spring boot app
+    -the port number used is 8500
+```
+
