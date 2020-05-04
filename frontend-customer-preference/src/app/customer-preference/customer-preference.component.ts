@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Customer } from '../model/customer-preference';
 
 @Component({
   selector: 'app-customer-preference',
@@ -11,6 +12,7 @@ export class CustomerPreferenceComponent implements OnInit {
 
   updateForm: FormGroup;
   id: String;
+  customer:Customer;
 
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
@@ -26,17 +28,17 @@ export class CustomerPreferenceComponent implements OnInit {
       preferedAddress: ['preferedAddressPhone',Validators.required],
       preferedTime: ['preferedTimeMorning',Validators.required],
       deliverOnSunday: [''],
-      offerUpdate: ['']
+      offerUpdate: [''],
     });
 
     const id = localStorage.getItem('cusId');
     this.id = id.toString();
-
+    
   }
 
   savePreference() {
     console.log(this.updateForm.value);
-    alert("Your preferences has been updated. Thank you!")
+    alert("Your preferences has been updated. Thank you!");
     this.router.navigate(['home']);
     localStorage.removeItem('cusId');
   }
