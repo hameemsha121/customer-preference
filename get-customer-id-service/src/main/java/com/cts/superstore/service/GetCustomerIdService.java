@@ -1,9 +1,9 @@
 package com.cts.superstore.service;
 
-import com.cts.superstore.model.GetCustomerId;
+import com.cts.superstore.model.Customer;
 
 public interface GetCustomerIdService {
 	
-	public GetCustomerId getCustomerById(int id);
+	public Customer getCustomerById(int id);
 
 }
