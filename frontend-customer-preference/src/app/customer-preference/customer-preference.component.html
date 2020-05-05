@@ -1,42 +1,42 @@
 <div class="row " style="height: 300px;">
 
     <form class="col-10 offset-1 bg-white p-4 border overflow-auto shadow" style="max-height:480px;"
-        [formGroup]="updateForm" (ngSubmit)="savePreference()">
+        [formGroup]="updateForm" (ngSubmit)="updatePreference()">
         <h2 class="text-center">Enter the details here</h2>
         <div class="row">
             <mat-form-field appearance="" class="w-100 col">
                 <mat-label>customer Id</mat-label>
-                <input matInput placeholder="id" value={{id}} disabled>
+                <input matInput placeholder="id" formControlName="id" disabled:true>
             </mat-form-field>
             <mat-form-field appearance="" class="w-100 col">
-                <mat-label>Name</mat-label>
+                <mat-label>Name <span class="text-danger">*</span></mat-label>
                 <input matInput placeholder="please fill out name" pattern="[A-Za-z]+" formControlName="name">
                 <mat-error>Name must conatin only alphabets</mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="" class="w-100 col">
-                <mat-label>phone</mat-label>
+                <mat-label>phone <span class="text-danger">*</span></mat-label>
                 <span matPrefix>+91 &nbsp;</span>
-                <input type="tel" matInput #tel placeholder="Ex. 7783242375" minlength="10" formControlName="phone" maxlength="10"
-                    pattern="[0-9]+">
+                <input type="tel" matInput #tel placeholder="Ex. 7783242375" minlength="10" formControlName="phone"
+                    maxlength="10" pattern="[0-9]+">
                 <mat-hint align="end">{{tel.value.length}} / 10</mat-hint>
                 <mat-error>Enter valid phone number</mat-error>
             </mat-form-field>
             <mat-form-field appearance="" class="w-100 col">
-                <mat-label>E-mail</mat-label>
+                <mat-label>E-mail <span class="text-danger">*</span></mat-label>
                 <input matInput placeholder="abc@abc.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     formControlName="email">
-                    <mat-error>Enter e-mail in correct format</mat-error>
+                <mat-error>Enter e-mail in correct format</mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="" class="w-100 col">
-                <mat-label>Home Address</mat-label>
+                <mat-label>Home Address <span class="text-danger">*</span></mat-label>
                 <textarea matInput placeholder="enter your home address" formControlName="homeAddress"></textarea>
             </mat-form-field>
             <mat-form-field appearance="" class="w-100 col">
-                <mat-label>Work Address</mat-label>
+                <mat-label>Work Address <span class="text-danger">*</span></mat-label>
                 <textarea matInput placeholder="enter your work address" formControlName="workAddress"></textarea>
             </mat-form-field>
         </div>
@@ -80,7 +80,8 @@
             </div>
         </div>
 
-        <button mat-raised-button matSuffix color="primary" [disabled]="!updateForm.valid" class="float-right">Submit</button>
+        <button mat-raised-button matSuffix color="primary" [disabled]="!updateForm.valid"
+            class="float-right">Submit</button>
 
     </form>
 

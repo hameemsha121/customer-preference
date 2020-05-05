@@ -14,16 +14,22 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { CustomerPreferenceComponent } from './customer-preference/customer-preference.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { GenerateReportComponent } from './generate-report/generate-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CustomerPreferenceComponent
+    CustomerPreferenceComponent,
+    AdminComponent,
+    GenerateReportComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule ,
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,

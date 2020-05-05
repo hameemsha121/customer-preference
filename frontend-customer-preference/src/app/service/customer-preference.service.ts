@@ -8,28 +8,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomerPreferenceService {
 
-  httpUrl = "http://localhost:8500/customer/";
+  httpUrl = "http://localhost:8765/";
 
   constructor(private httpClient: HttpClient) { }
 
-  saveCustomerPreference(customer: Customer): Observable<Customer> {
-    return this.httpClient.post<Customer>(this.httpUrl, customer)
-  }
-
-  getAllCustomerPreference(): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(this.httpUrl);
-  }
-
   getCustomerPrefernceById(id: number): Observable<Customer> {
-    return this.httpClient.get<Customer>(this.httpUrl + id);
+    return this.httpClient.get<Customer>(this.httpUrl + "get-customer-id-service/customer/" + id);
   }
 
   updateCustomerPreference(customer: Customer): Observable<Customer> {
-    return this.httpClient.put<Customer>(this.httpUrl, customer);
+    return this.httpClient.put<Customer>(this.httpUrl + "customer-preference-service/customer/", customer);
   }
 
-  generateReport(customer: Customer): Observable<Customer> {
-    return this.httpClient.get<Customer>(this.httpUrl);
+  generateReport(date: Date): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>(this.httpUrl);
   }
 
 }

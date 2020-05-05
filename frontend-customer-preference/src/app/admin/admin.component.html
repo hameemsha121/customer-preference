@@ -1,0 +1,19 @@
+<div class="row align-items-center" style="height: 300px;">
+
+    <form class="col-6 offset-3 jumbotron bg-white border rounded shadow" (ngSubmit)="login()" [formGroup]="adminForm">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label class="text-dark">admin id</mat-label>
+            <input matInput type="text" formControlName="adminId" minlength="4" maxlength="4">
+            <mat-hint></mat-hint>
+            <mat-error>Enter the valid id</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label class="text-dark">password</mat-label>
+            <input matInput type="text" formControlName="password" minlength="4" maxlength="4">
+            <mat-hint></mat-hint>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="!adminForm.valid" class="float-right">Sign in</button>
+    </form>
+
+</div>

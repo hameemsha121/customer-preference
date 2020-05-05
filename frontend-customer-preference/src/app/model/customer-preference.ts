@@ -1,4 +1,4 @@
-export class Customer {
+export interface Customer {
     cusId: number;
     name: string;
     phone: number;
@@ -12,7 +12,7 @@ export class Customer {
     availableOnSunday: boolean;
     created: Date;
     createdBy: string;
-    updated: Date;
+    updated: string;
     updatedBy: string;
     isActive: boolean;
 }
