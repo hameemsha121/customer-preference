@@ -15,11 +15,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class GenerateReportServiceApplication {
+public class CustomerPreferenceServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GenerateReportServiceApplication.class, args);
+		SpringApplication.run(CustomerPreferenceServiceApplication.class, args);
 	}
+	
 	@Bean
 	public Docket SwaggerConfiguration() {
 		return new Docket(DocumentationType.SWAGGER_2)
@@ -44,5 +45,4 @@ public class GenerateReportServiceApplication {
 				Collections.EMPTY_LIST);
 		
 	}
-
 }

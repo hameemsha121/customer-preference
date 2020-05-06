@@ -17,34 +17,42 @@ import org.springframework.stereotype.Service;
 import com.cts.superstore.entity.GenerateReport;
 import com.cts.superstore.model.GenerateReportModel;
 import com.cts.superstore.repository.GenerateReportRepository;
+import com.cts.superstore.validator.GenerateReportValidator;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Service
-public class GenerateReportServiceImplemenation implements GenerateReportService{
+@Slf4j
+public class GenerateReportServiceImplemenation {
 
 	@Autowired
 	GenerateReportRepository generateReportRepo;
-	Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@Override
+	@Autowired
+	GenerateReportValidator validator;
+	
 	public List<GenerateReportModel> getCustomerUpdatedByDate() {
+		
 		List<GenerateReport> entities=generateReportRepo.findAll();
-		List<GenerateReportModel> list=new ArrayList<GenerateReportModel>();
+		List<GenerateReportModel> customerList=new ArrayList<GenerateReportModel>();
 		for(GenerateReport entity:entities) {
-			GenerateReportModel generateReport=new GenerateReportModel();
-			BeanUtils.copyProperties(entity,generateReport);
+			if(validator.validate(entity)) {
+			GenerateReportModel generateReportModel=new GenerateReportModel();
+			BeanUtils.copyProperties(entity,generateReportModel);
 			LocalDate a=LocalDate.now();
 			//System.out.println(entity.getUpdated());
 			if(entity.getUpdated().equals(a)) {
-				list.add(generateReport);
+				customerList.add(generateReportModel);
 			}
-	}
+			}
+		}
 		log.info("The entities-->{}",entities);
 		//System.out.println("Entity:"+entities);
 		//System.out.println("DTO: "+list);
-		log.info("The Used fields table is--->{}",list);
+		log.info("The Used fields table is--->{}",customerList);
 		LocalDate b=LocalDate.now();
 		//System.out.println(b);
-		return list;
+		return customerList;
 	}
 
 }
