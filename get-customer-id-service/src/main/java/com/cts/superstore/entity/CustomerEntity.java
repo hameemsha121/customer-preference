@@ -16,7 +16,7 @@ public  @Data class CustomerEntity implements Serializable{
 	private static final long serialVersionUID = 394014962190928933L;
 	
 	@Id
-	
+	@GeneratedValue
 	private int id;
 	private String name;
 	private long phone;

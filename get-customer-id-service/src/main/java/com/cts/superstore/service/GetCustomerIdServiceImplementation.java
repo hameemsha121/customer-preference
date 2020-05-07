@@ -8,20 +8,26 @@ import org.springframework.stereotype.Service;
 
 import com.cts.superstore.entity.CustomerEntity;
 import com.cts.superstore.model.Customer;
-import com.cts.superstore.repository.GetCustomerByIdRepository;
+import com.cts.superstore.repository.GetCustomerIdRepository;
+import com.cts.superstore.validator.GetCustomerIdValidator;
 
 @Service
-public class GetCustomerByIdService  { // implements GetCustomerIdService {
+public class GetCustomerIdServiceImplementation  {
 
 	@Autowired
-	GetCustomerByIdRepository getCustomerByIdRepo;
+	GetCustomerIdRepository customerRepo;
 	
+	@Autowired
+	GetCustomerIdValidator validator;
 	
 	public Customer getCustomerById(int id) {
 		
-		Optional<CustomerEntity> customerEntity = getCustomerByIdRepo.findById(id);
+		Optional<CustomerEntity> cust = customerRepo.findById(id);
+		
 		Customer customer=new Customer();
-		BeanUtils.copyProperties(customerEntity.get(),customer );
+		
+		BeanUtils.copyProperties(cust.get(),customer );
+		
 		return customer;
 	}
 	

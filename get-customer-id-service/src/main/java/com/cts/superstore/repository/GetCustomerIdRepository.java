@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.cts.superstore.entity.CustomerEntity;
 
-public interface GetCustomerByIdRepository extends JpaRepository<CustomerEntity,Integer>{
+public interface GetCustomerIdRepository extends JpaRepository<CustomerEntity,Integer>{
 
 }
