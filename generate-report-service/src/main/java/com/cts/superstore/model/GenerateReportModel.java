@@ -7,12 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
+@AllArgsConstructor
 public @Data class GenerateReportModel {
 
 	
-	 private int id;
+	 public GenerateReportModel() {
+		// TODO Auto-generated constructor stub
+	}
+	private int id;
 	 private String name;
 	 private String preferedContact;
      private String preferedAddress;
