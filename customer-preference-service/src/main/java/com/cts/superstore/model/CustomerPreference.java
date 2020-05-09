@@ -11,7 +11,6 @@ public @Data class CustomerPreference {
 	
 	
 	    private int id;
-	    private int custId;
 	    private String name;
 	    private long phone;
 	    private String email;
