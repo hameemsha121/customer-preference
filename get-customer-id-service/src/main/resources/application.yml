@@ -9,8 +9,13 @@ spring:
      url : jdbc:mysql://localhost:3306/cognizant
      username: root
      password: root
-  cloud : 
-    config : 
-      uri : http://localhost:8888
+
 server: 
   port: 8000
+
+customer-preference-service:
+  ribbon:
+     listOfservers: http://localhost:8060,http://localhost:8070
+      
+      
+    

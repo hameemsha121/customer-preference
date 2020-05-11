@@ -2,6 +2,7 @@ package com.cts.superstore.controller;
 
 import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,11 +24,15 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/cts/superstore")
 public class GetCustomerByIdController {
 	
+	
 	@Autowired
 	GetCustomerIdServiceImplementation service;
 
 	@Autowired
 	GetCustomerIdValidator validator;
+	
+	@Autowired
+	CustomerServiceProxy proxy;
 	
 	@GetMapping(value = "/customer/{id}")
 	public ResponseEntity<?> getCustomerById(@PathVariable("id") int id) {
@@ -45,6 +50,20 @@ public class GetCustomerByIdController {
 			return new ResponseEntity<String>("Customer not found", HttpStatus.NOT_FOUND);
 		}
 		
+	}
+	
+	@GetMapping(value = "/customer")
+	public ResponseEntity<?> getAllCustomers(){
+		
+		ResponseEntity<?> customers = proxy.getAllCustomers();
+		return customers;
+
+	}
+	
+	@GetMapping("/ribbon")
+	public String ribbonTest() {
+		String str = proxy.ribbonTest();
+	   return str ;
 	}
 
 
